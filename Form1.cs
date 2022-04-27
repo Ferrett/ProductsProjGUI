@@ -48,12 +48,12 @@ namespace WindowsFormsApp2
 
         private void post1btn_Click(object sender, EventArgs e)
         {
-            textBoxReply.Text = WorkWithWeb.GetTextFromCoreApi($"http://prikhod160422-001-site1.dtempurl.com/AddCategory?name={textBoxPost1.Text}");
+            textBoxReply.Text = WorkWithWeb.MakeRequest($"http://prikhod160422-001-site1.dtempurl.com/AddCategory", $"{textBoxPost1.Text}");
         }
 
         private void post2btn_Click(object sender, EventArgs e)
         {
-            textBoxReply.Text = WorkWithWeb.GetTextFromCoreApi($"http://prikhod160422-001-site1.dtempurl.com/AddProduct?price={textBoxPost2.Text}&name={textBoxPost3.Text}&category_id={textBoxPost4.Text}");
+            textBoxReply.Text = WorkWithWeb.MakeRequest($"http://prikhod160422-001-site1.dtempurl.com/AddProduct",int.Parse(textBoxPost2.Text),textBoxPost3.Text,int.Parse(textBoxPost4.Text));
         }
 
         private void deletebtn1_Click(object sender, EventArgs e)
